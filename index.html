@@ -1,472 +1,202 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Jack Handyman Services 提供优质家居维修、安装与翻新服务，为湾区客户带来专业体验">
-  <title>Jack | Handyman Services</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    /* Header */
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 15px 0;
-      text-align: center;
-      position: relative;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-    }
-
-    /* 导航栏 */
-    .navbar {
-      background-color: #fff;
-      padding: 10px 0;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .navbar ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .navbar li {
-      display: inline-block;
-      margin: 0 15px;
-    }
-    .navbar a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    .navbar a:hover {
-      color: #4CAF50;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    .section-title {
-      margin-top: 30px;
-      margin-bottom: 20px;
-      font-size: 24px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .about, .services, .photos {
-      margin-bottom: 40px;
-    }
-    .about p, .services ul {
-      line-height: 1.8;
-      text-align: justify;
-    }
-    .services ul {
-      list-style: none;
-      padding: 0;
-    }
-    .services li {
-      margin-bottom: 10px;
-    }
-
-    /* Gallery - 两列大图示例 */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-      gap: 20px;
-    }
-    .gallery-item {
-      background-color: #fff;
-      padding: 10px;
-      text-align: center;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-    .gallery-item p {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    /* Testimonial Section (Auto Scrolling) */
-    .testimonial-section {
-      text-align: center;
-      padding: 40px 0;
-    }
-    .testimonial-section h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-    .testimonial-section .subtitle {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    /* 自动滚动容器 */
-    .testimonial-row {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-      margin: 0 auto;
-    }
-    .scroll-content {
-      display: flex;
-      width: 200%;
-      animation: scroll-left 40s linear infinite;
-    }
-    @keyframes scroll-left {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* 评论卡片 */
-    .testimonial-card {
-      flex: 0 0 300px;
-      box-sizing: border-box;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 20px;
-      margin-right: 20px;
-      text-align: left;
-    }
-    .testimonial-card:last-child {
-      margin-right: 0;
-    }
-    .testimonial-card-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .testimonial-card-header img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 10px;
-    }
-    .testimonial-card-user {
-      margin: 0;
-      font-size: 16px;
-      font-weight: bold;
-    }
-    .testimonial-card-date {
-      font-size: 12px;
-      color: #999;
-      margin-top: 2px;
-    }
-    .stars {
-      color: #f39c12;
-      font-size: 14px;
-      margin-top: 4px;
-    }
-    .testimonial-text {
-      font-style: italic;
-      color: #555;
-      line-height: 1.5;
-      margin-top: 5px;
-    }
-
-    /* Map + Contact Info */
-    .map-and-contact {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      max-width: 900px;
-      margin: 30px auto 0 auto;
-    }
-    .map iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-      border-radius: 8px;
-    }
-    .map-and-contact .contact {
-      text-align: center;
-    }
-    .map-and-contact .contact h3 {
-      margin-bottom: 5px;
-      font-size: 20px;
-    }
-    .map-and-contact .contact p {
-      margin: 0 0 10px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .map-and-contact .contact a {
-      display: inline-block;
-      padding: 10px 16px;
-      background-color: #4CAF50;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-    .map-and-contact .contact a:hover {
-      background-color: #388E3C;
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 15px;
-      color: #555;
-      text-align: center;
-      padding-bottom: 20px;
-    }
-    footer a {
-      color: #4CAF50;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    footer a:hover {
-      color: #388E3C;
-    }
-  </style>
+<title>老陈装修</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<link href="assets/css/main.css" rel="stylesheet"/>
+<noscript><link href="assets/css/noscript.css" rel="stylesheet"/></noscript>
 </head>
-<body>
+<body class="is-preload">
+<!-- Sidebar -->
+<section id="sidebar">
+<div class="inner">
+<nav>
+<ul>
+<li><a href="#intro">欢迎页面</a></li>
+<li><a href="#one">关于我们</a></li>
+<li><a href="#two">我们的服务</a></li>
+<li><a href="#three">欢迎联系我们</a></li>
+</ul>
+</nav>
+</div>
+</section>
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Intro -->
+<section class="wrapper style1 fullscreen fade-up" id="intro">
+<div class="inner">
+<h1>老陈装修</h1>
+<p>空间无言，却自有生命；匠心虽默，亦能生辉。我辈专精住宅与商业之内外修饰，悉心于设计施工之间，凡我所至，必使其焕然新生。选我老陈，品的是巧思细致之高效，赏的是匠心独运之品质，享的是经久实惠之安心。
 
-  <!-- Header -->
-  <header>
-    <h1>Jack | Handyman Services</h1>
-    <p>Providing furniture assembly, painting, hardware installation, flooring repairs, and minor home improvements. Serving the Bay Area. Contact us today!</p>
-    <p style="font-size: 28px; font-weight: bold;">
-      <a href="tel:+16199839628" style="text-decoration: none; color: white;">619-983-9628</a>
-    </p>
-
-    <!-- 导航栏 -->
-    <nav class="navbar">
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#photos">Projects</a></li>
-        <li><a href="#testimonial">Testimonial</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <div class="container">
-    <!-- About Me Section -->
-    <section class="about" id="about">
-      <h2 class="section-title">About Me</h2>
-      <p>Hi, I’m Jack – an experienced handyman based in the Bay Area. Over the years, I’ve helped many homeowners with home improvements, from small repairs to room upgrades. I focus on quality work, attention to detail, and making sure you’re happy with the final result. Whether you need a quick fix or want to refresh your living space, I’m here to help.</p>
-    </section>
-    
-    <!-- Services Section -->
-    <section class="services" id="services">
-      <h2 class="section-title">Services Offered</h2>
-      <ul>
-        <li>✅ <strong>Furniture Assembly</strong> – Quick and precise assembly of various furniture, saving you time and hassle.</li>
-        <li>✅ <strong>Painting & Touch-ups</strong> – Wall repairs and paint refresh, covering cracks, stains, and giving your home a new look.</li>
-        <li>✅ <strong>Flooring Installation & Repairs</strong> – Small flooring repairs, fixing squeaks, and minor installations.</li>
-        <li>✅ <strong>Hardware Installation</strong> – Installation of lights, faucets, door locks, handles, and more for a polished finish.</li>
-        <li>✅ <strong>Small Home Repairs</strong> – Minor bathroom upgrades, small area renovations to enhance your living space.</li>
-      </ul>
-    </section>
-    
-    <!-- Photos Section -->
-    <section class="photos" id="photos">
-      <h2 class="section-title">Recent Jobs & Collaborations</h2>
-      <p style="text-align: center; font-size: 14px; color: #666;">
-        These images showcase improvements where I provided handyman services such as installation, painting, and minor repairs. 
-        For larger projects, I collaborate with licensed contractors.
-      </p>
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="stairsoriginal.png" alt="Stairs - Before">
-          <p>Stairs - Before Improvement</p>
-        </div>
-        <div class="gallery-item">
-          <img src="stairsnew.png" alt="Stairs - After">
-          <p>Stairs - After Improvement</p>
-        </div>
-        <div class="gallery-item">
-          <img src="bathroomoriginal.png" alt="Bathroom - Before">
-          <p>Bathroom - Before Improvement</p>
-        </div>
-        <div class="gallery-item">
-          <img src="bathroomnew.png" alt="Bathroom - After">
-          <p>Bathroom - After Improvement</p>
-        </div>
-        <div class="gallery-item">
-          <img src="kitchenoriginnal.png" alt="Kitchen - Before">
-          <p>Kitchen - Before Improvement</p>
-        </div>
-        <div class="gallery-item">
-          <img src="kitchennew.png" alt="Kitchen - After">
-          <p>Kitchen - After Improvement</p>
-        </div>
-        <div class="gallery-item">
-          <img src="kitchen.jpg" alt="Kitchen">
-          <p>Kitchen - Improvement</p>
-        </div>
-        <div class="gallery-item">
-          <img src="bathroom.png" alt="Bathroom">
-          <p>Bathroom - After Improvement</p>
-        </div>
-        <div class="gallery-item">
-          <img src="tools.jpeg" alt="Tools">
-          <p>Tools</p>
-        </div>
-        <div class="gallery-item">
-          <img src="workvan.PNG" alt="Work Van">
-          <p>Work Van</p>
-        </div>
-        <!-- 新增两张图片 -->
-        <div class="gallery-item">
-          <img src="bathroom2.jpg" alt="Additional Project 1">
-          <p>Additional Project 1</p>
-        </div>
-        <div class="gallery-item">
-          <img src="bathroomnew2.jpg" alt="Additional Project 2">
-          <p>Additional Project 2</p>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Testimonial Section (Auto Scrolling) -->
-    <section class="testimonial-section" id="testimonial">
-      <h2>Testimonial</h2>
-      <p class="subtitle">Review Speaks For Itself</p>
-
-      <div class="testimonial-row">
-        <div class="scroll-content">
-          <!-- 第一份内容 -->
-          <div class="testimonial-card">
-            <div class="testimonial-card-header">
-              <img src="user1.png" alt="Roberto" />
-              <div>
-                <p class="testimonial-card-user">Roberto Serrano</p>
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-card-date">2023-04-01</p>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              Short story: Jack was called for a sudden emergency at 10 p.m and turned a stressful situation into a quick fix!
-              I'm so grateful for his responsiveness and expertise.
-            </p>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-card-header">
-              <img src="user2.png" alt="Danette" />
-              <div>
-                <p class="testimonial-card-user">Danette Lee</p>
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-card-date">2022-08-13</p>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              Jack and his team installed barn doors for me in December and I was pleased with the work and professionalism. Thank you again!
-            </p>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-card-header">
-              <img src="user3.png" alt="Kam" />
-              <div>
-                <p class="testimonial-card-user">Kam J.</p>
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-card-date">2023-01-07</p>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              Excellent service. Very thorough fixing the faucet. Gave me a reasonable quote. Very satisfied with the work.
-            </p>
-          </div>
-
-          <!-- 复制一份用于无缝滚动 -->
-          <div class="testimonial-card">
-            <div class="testimonial-card-header">
-              <img src="user1.png" alt="Roberto" />
-              <div>
-                <p class="testimonial-card-user">Roberto Serrano</p>
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-card-date">2023-04-01</p>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              Short story: Jack was called for a sudden emergency at 10 p.m and turned a stressful situation into a quick fix!
-              I'm so grateful for his responsiveness and expertise.
-            </p>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-card-header">
-              <img src="user2.png" alt="Danette" />
-              <div>
-                <p class="testimonial-card-user">Danette Lee</p>
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-card-date">2022-08-13</p>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              Jack and his team installed barn doors for me in December and I was pleased with the work and professionalism. Thank you again!
-            </p>
-          </div>
-          <div class="testimonial-card">
-            <div class="testimonial-card-header">
-              <img src="user3.png" alt="Kam" />
-              <div>
-                <p class="testimonial-card-user">Kam J.</p>
-                <div class="stars">★★★★★</div>
-                <p class="testimonial-card-date">2023-01-07</p>
-              </div>
-            </div>
-            <p class="testimonial-text">
-              Excellent service. Very thorough fixing the faucet. Gave me a reasonable quote. Very satisfied with the work.
-            </p>
-          </div>
-        </div><!-- scroll-content -->
-      </div><!-- testimonial-row -->
-    </section>
-    
-    <!-- Map & Contact Info -->
-    <div class="map-and-contact" id="contact">
-      <div class="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.2811833195647!2d-121.99308668469978!3d37.54853997980161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcac0c0b6e3ed%3A0x60aaaca7e15d42b6!2sFremont%2C%20CA!5e0!3m2!1sen!2sus!4v1678549897688!5m2!1sen!2sus"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-      <div class="contact">
-        <h3>Jack Handyman</h3>
-        <p>619-983-9628</p>
-        <!-- 按钮改为“Text Me”，点击跳转到短信 -->
-        <a href="sms:+16199839628">Text Me</a>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Footer -->
-  <footer>
-    <p>Serving the Bay Area | Quality Handyman Services | <a href="sms:+16199839628">Text Me: 619-983-9628</a></p>
-    <p style="font-size: 14px; color: #666;">
-      Legal Notice: Handyman services in California are legally limited to projects under $1,000, including labor and materials.
-      <a href="https://www.cslb.ca.gov/Resources/IndustryBulletins/2024/AB%202622%20Implementation.FINAL.pdf" target="_blank" style="color: #4CAF50;">View Regulation Details</a>
-    </p>
-  </footer>
+方寸之间，重塑一方天地；与君携手，共造美好空间。</a></p>
+<ul class="actions">
+<li><a class="button scrolly" href="#one">了解更多</a></li>
+</ul>
+</div>
+</section>
+<!-- One -->
+<section class="wrapper style2 spotlights" id="one">
+<section>
+<a class="image" href="#"><img alt="" data-position="center center" src="images/pic01.png"/></a>
+<div class="content">
+<div class="inner">
+<h2>高端浴室翻新</h2>
+<p>我们提供高品质的浴室装修服务，包括瓷砖地面、整体卫浴、浴缸安装、水电线路、灯具和卫浴家具，打造现代舒适的卫浴空间。</p>
+<ul class="actions">
+<li><a class="button" href="generic.html">了解更多</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<a class="image" href="#"><img alt="" data-position="top center" src="images/pic02.png"/></a>
+<div class="content">
+<div class="inner">
+<h2>厨房整体升级</h2>
+<p>我们擅长高品质厨房装修，包括橱柜定制安装、墙面翻新、地板铺设、水电改造、灯具安装等服务，助您实现理想厨房环境。</p>
+<ul class="actions">
+<li><a class="button" href="generic.html">了解更多</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<a class="image" href="#"><img alt="" data-position="25% 25%" src="images/pic03.png"/></a>
+<div class="content">
+<div class="inner">
+<h2>地板铺装与墙面油漆</h2>
+<p>专业提供各类高品质地板安装与墙面油漆服务，包括强化地板、实木复合地板铺装，墙面涂料及修补，确保精致耐用的装修效果。</p>
+<ul class="actions">
+<li><a class="button" href="generic.html">了解更多</a></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<!-- Two -->
+<section class="wrapper style3 fade-up" id="two">
+<div class="inner">
+<h2>我们的服务</h2>
+<p>无论您是要进行局部翻新还是整屋改造，我们都乐意为您提供建议与报价。请填写表单或通过下方联系方式联系我们。</p>
+<div class="features">
+<section>
+<span class="icon solid major fa-utensils"></span>
+<h3>厨房翻新</h3>
+<p>我们注重施工细节，追求实用与美观并重，为客户打造安全、舒适、有品味的家居环境。</p>
+</section>
+<section>
+<span class="icon solid major fa-bath"></span>
+<h3>浴室改造</h3>
+<p>我们注重施工细节，追求实用与美观并重，为客户打造安全、舒适、有品味的家居环境。</p>
+</section>
+<section>
+<span class="icon solid major fa-paint-roller"></span>
+<h3>室内油漆</h3>
+<p>我们注重施工细节，追求实用与美观并重，为客户打造安全、舒适、有品味的家居环境。</p>
+</section>
+<section>
+<span class="icon solid major fa-ruler-combined"></span>
+<h3>地板铺设</h3>
+<p>我们注重施工细节，追求实用与美观并重，为客户打造安全、舒适、有品味的家居环境。</p>
+</section>
+<section>
+<span class="icon solid major fa-bolt"></span>
+<h3>水电安装</h3>
+<p>我们注重施工细节，追求实用与美观并重，为客户打造安全、舒适、有品味的家居环境。</p>
+</section>
+<section>
+<span class="icon solid major fa-tools"></span>
+<h3>五金灯具更换</h3>
+<p>我们注重施工细节，追求实用与美观并重，为客户打造安全、舒适、有品味的家居环境。</p>
+</section>
+</div>
+<ul class="actions">
+<li><a class="button" href="generic.html">了解更多</a></li>
+</ul>
+</div>
+</section>
+<!-- Three -->
+<section class="wrapper style1 fade-up" id="three">
+<div class="inner">
+<h2>欢迎联系我们</h2>
+<p>无论您是要进行局部翻新还是整屋改造，我们都乐意为您提供建议与报价。请填写表单或通过下方联系方式联系我们。</p>
+<div class="split style1">
+<section>
+<form action="#" method="post">
+<div class="fields">
+<div class="field half">
+<label for="name">姓名</label>
+<input id="name" name="name" type="text"/>
+</div>
+<div class="field half">
+<label for="email">电子邮箱</label>
+<input id="email" name="email" type="text"/>
+</div>
+<div class="field">
+<label for="message">留言内容</label>
+<textarea id="message" name="message" rows="5"></textarea>
+</div>
+</div>
+<ul class="actions">
+<li><a class="button submit" href="">发送信息</a></li>
+</ul>
+</form>
+</section>
+<section>
+<ul class="contact">
+<li>
+<h3>服务区域</h3>
+<span>Fremont;milpitas;santa clara;				san jose<br/>
+如果您的地址不在上述区域内，您也可以与我们联系。		<br/>
+我们会根据情况进行评估，尽力为您提供服务支持。	</span>
+</li>
+<li>
+<h3>电子邮箱</h3>
+<a href="#">cxfriday@gmail.com</a>
+</li>
+<li>
+<h3>联络人</h3>
+<span>阿Jack：619-983-9628</span>
+</li>
+<li>
+<h3>社交平台</h3>
+<ul class="icons">
+<li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
+<li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
+<li><a class="icon brands fa-github" href="#"><span class="label">GitHub</span></a></li>
+<li><a class="icon brands fa-instagram" href="#"><span class="label">Instagram</span></a></li>
+<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="wrapper style1-alt" id="footer">
+<div class="inner">
+<ul class="menu">
+<li>© 2025. All rights reserved.</li><li>
+Professional website design and infrastructure provided in-house.</a></li>
+</ul>
+</div>
+</footer>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
